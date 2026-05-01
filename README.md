@@ -532,6 +532,120 @@ Tidak ada kendala
 
 ### Soal 2 
 
+** Makefile **
+
+Diberikan file `Makefile` yang mengcompile file eternal dan orion secara langsung.
+
+Selanjutnya
+
+** arena.h **
+
+Untuk kodingannya seperti ini:
+
+```c
+#ifndef ARENA_H
+#define ARENA_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/msg.h>
+#include <semaphore.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <termios.h>
+
+#define SHM_KEY 0x1234
+#define MSG_KEY 0x5678
+
+#define MAX_USERS 100
+#define LOG_MAX 5
+
+typedef struct {
+    char username[50];
+    char password[50];
+    int gold;
+    int lvl;
+    int xp;
+    int bonus_dmg_weapon;
+    char weapon_name[50];
+} Player;
+
+struct msg_buffer {
+    long msg_type;
+    char msg_text[100];
+    int client_pid;
+};
+
+typedef struct {
+    int is_matchmaking;
+    int player1_pid;
+    int player2_pid;
+    
+    int is_battle_active;
+    Player p1_stats;
+    Player p2_stats;
+    int p1_current_hp;
+    int p2_current_hp;
+    
+    char combat_logs[LOG_MAX][100];
+    int log_index;
+
+    sem_t battle_mutex;
+} BattleArena;
+
+
+#define BASE_DMG 10
+#define BASE_HP 100
+
+typedef struct {
+    char name[20];
+    int price;
+    int dmg;
+} Weapon;
+
+Weapon armory[5] = {
+    {"Wood Sword", 100, 5},
+    {"Iron Sword", 300, 15},
+    {"Steel Axe", 600, 30},
+    {"Demon Blade", 1500, 60},
+    {"God Slayer", 5000, 150}
+};
+
+#endif
+```
+
+Nah dalam kode ini ada beberapa fungsi seperti fungsi untuk mendefinisikan alamat memorinya yang berbasis hexadecimal lalu juga mendefinisikan maksimum dari user dan lognya. Kemudian menyediakan sebuah data dari player untuk menyimpan statnya. Lalu juga ada fungsi `msg_buffer` yang dimana sebagai tempat komunikasi untuk antreannya. Lalu sinkronisasi data pada bagian matchmakingnya. Nah dalam kasus ini menggunakan memori bersama dan melacak masing-masing pid dari kedua player. Dan terakhir data persenjataan yang mana menyimpan beberapa stat seperti nama senjata, harga, dan dmg dari senjata tersebut. Selanjutnya
+
+** orion.c **
+
+nah pada file ini adalah sebagai tempat server untuk menghubungkan header file arena dengan file eternal. Pertama-pertama 
+
+```c
+#include "arena.h"
+```
+
+untuk mengimport fungsi yang dibutuhkan ke dalam file orion.c. Selanjutnya
+
+```c
+int main() {
+
+int shmid = shmget(SHM_KEY, sizeof(BattleArena), IPC_CREAT | 0666);
+    BattleArena *arena = (BattleArena *)shmat(shmid, NULL, 0);
+
+    int msgid = msgget(MSG_KEY, IPC_CREAT | 0666);
+
+    memset(arena, 0, sizeof(BattleArena));
+    sem_init(&arena->battle_mutex, 1, 1); 
+```
+
+Nah pada kode ini membuat arena virtual dengan cara meminjam memori. Nah dari ini memorinya tersebut menjadi memori bersama. Lalu ada fungsi msgget untuk bisa mendaftar player. Kemudian fungsi memset ini membersihkan memori yang sudah dipakai (sebelumnya) untuk bisa dipakai kembali. Dan juga kode sem_init ini untuk mengendalikan dari pergerakan player agar tidak terjadi race condition. Ini juga mencegah data tidak corrupt. 
+
+** 
 #### output
 
 #### Kendala
