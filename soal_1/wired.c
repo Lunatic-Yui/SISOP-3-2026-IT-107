@@ -34,7 +34,6 @@ void write_log(const char* role, const char* status_or_msg) {
 
 void broadcast(const char *message, int sender_sd) {
     for (int i = 0; i < MAX_CLIENTS; i++) {
-        // Jangan kirim ke diri sendiri, dan jangan kirim ke Admin
         if (clients[i].socket != 0 && clients[i].socket != sender_sd && !clients[i].is_admin) {
             send(clients[i].socket, message, strlen(message), 0);
         }
