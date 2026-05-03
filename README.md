@@ -527,30 +527,39 @@ adlaah fungsi yang dimana dia akan memutus koneksi ketika server tidak terhubung
 #### output
 
 1. Program wired jalan
+
 ![alt_text](/assets/soal_1/wired.png)
 
 2. Membuat akun untuk user 1
+
 ![alt_text](/assets/soal_1/user_1.png)
 
 3. Membuat akun untuk user 2 dengan username sama
+
 ![alt_text](/assets/soal_1/handling_1.png)
 
 4. Membuat akun untuk user 2
+
 ![alt_text](/assets/soal_1/user_2.png)
 
 5. Ngobrol
+
 ![alt_text](/assets/soal_1/ngobrol.png)
 
 6. Disconnect user 1
+
 ![alt_text](/assets/soal_1/dc.png)
 
 7. Admin masuk
+
 ![alt_text](/assets/soal_1/admin.png)
 
 8. Command 1 dan 2
+
 ![alt_text](/assets/soal_1/command_1.png)
 
 9. Command 3 dan hasil dari user
+
 ![alt_text](/assets/soal_1/command_2.png)
 
 ![alt_text](/assets/soal_1/pemadaman.png)
@@ -1320,22 +1329,74 @@ Fungsi handler untuk mengcancel kalau sudah melewait timeoutnya yaitu 35 detik. 
 #### output
 
 1. Menjalankan `Makefile` dengan command `make`
+
 ![alt_text](/assets/soal_2/make.png)
 
 2. File orion jalan
+
 ![alt_text](/assets/soal_2/orion.png)
 
 3. File eternal jalan
+
 ![alt_text](/assets/soal_2/eternal_1.png)
 
 4. Registrasi user 1
+
 ![alt_text](/assets/soal_2/eternal_2.png)
 
 5. Login handling
+
 ![alt_text](/assets/soal_2/handling_1.png)
 
-6. Login user 1
+6. Login user 1 dan tampilannya
+
 ![alt_text](/assets/soal_2/eternal_3.png)
+
+![alt_text](/assets/soal_2/profile.png)
+
+7. Matchmaking
+
+![alt_text](/assets/soal_2/eternal_4.png)
+
+8. Lawan bot
+
+![alt_text](/assets/soal_2/timeout.png)
+
+9. Lawan player
+
+![alt_text](/assets/soal_2/fightning.png)
+
+10. Hasil fightnya
+
+![alt_text](/assets/soal_2/result.png)
+
+11. History
+
+![alt_text](/assets/soal_2/history.png)
+
+12. Tempat armory
+
+![alt_text](/assets/soal_2/armory.png)
+
+13. Ketika duit gk cukup
+
+![alt_text](/assets/soal_2/handling_2.png)
+
+14. Ketika duit cukup dan weapon terbeli
+
+![alt_text](/assets/soal_2/weapon_buy.png)
+
+15. Exit
+
+![alt_text](/assets/soal_2/exit.png)
+
+16. File history.bin
+
+![alt_text](/assets/soal_2/file_history.png)
+
+17. File prajurit.bin
+
+![alt_text](/assets/soal_2/file_prajurit.png)
 
 #### Kendala
 
