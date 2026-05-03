@@ -297,7 +297,7 @@ Ini hanya membersihkan carriage returnnya saja. Next filenya:
 
 Pertama-tama untuk setupnya seperti ini:
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -525,6 +525,47 @@ adalah fungsi yang mengecheck apakah terdapat username yang sama atau tidak. Jik
 
 adlaah fungsi yang dimana dia akan memutus koneksi ketika server tidak terhubung dan akan mengeluarkan dari thread. 
 #### output
+
+1. Program wired jalan
+![alt_text](/assets/soal_1/wired.png)
+
+2. Membuat akun untuk user 1
+![alt_text](/assets/soal_1/user_1.png)
+
+3. Membuat akun untuk user 2 dengan username sama
+![alt_text](/assets/soal_1/handling_1.png)
+
+4. Membuat akun untuk user 2
+![alt_text](/assets/soal_1/user_2.png)
+
+5. Ngobrol
+![alt_text](/assets/soal_1/ngobrol.png)
+
+6. Disconnect user 1
+![alt_text](/assets/soal_1/dc.png)
+
+7. Admin masuk
+![alt_text](/assets/soal_1/admin.png)
+
+8. Command 1 dan 2
+![alt_text](/assets/soal_1/command_1.png)
+
+9. Command 3 dan hasil dari user
+![alt_text](/assets/soal_1/command_2.png)
+
+![alt_text](/assets/soal_1/pemadaman.png)
+
+10. Mencoba menjalankan navi ketika server mati
+
+![alt_text](/assets/soal_1/server_mati.png)
+
+11. Result history.lognya
+
+![alt_text](/assets/soal_1/result.png)
+
+12. Menjalankan wired ketika wired yang lain aktif
+
+![alt_text](/assets/soal_1/handling_3.png)
 
 #### Kendala
 
