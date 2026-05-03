@@ -1319,6 +1319,24 @@ Fungsi handler untuk mengcancel kalau sudah melewait timeoutnya yaitu 35 detik. 
 
 #### output
 
+1. Menjalankan `Makefile` dengan command `make`
+![alt_text](/assets/soal_2/make.png)
+
+2. File orion jalan
+![alt_text](/assets/soal_2/orion.png)
+
+3. File eternal jalan
+![alt_text](/assets/soal_2/eternal_1.png)
+
+4. Registrasi user 1
+![alt_text](/assets/soal_2/eternal_2.png)
+
+5. Login handling
+![alt_text](/assets/soal_2/handling_1.png)
+
+6. Login user 1
+![alt_text](/assets/soal_2/eternal_3.png)
+
 #### Kendala
 
 Tidak ada kendala
